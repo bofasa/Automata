@@ -1,0 +1,6 @@
+hostname: coresw1
+
+# parametes for connection type network_cli
+ansible_ssh_user: admin
+ansible_ssh_pass: Admin2018
+ansible_network_os: dellos10
