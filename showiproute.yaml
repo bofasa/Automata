@@ -1,0 +1,19 @@
+---
+- name: 'Dell Core 01/02 SW'
+  hosts: all
+  connection: network_cli
+  gather_facts: no
+
+  vars_files:
+    - /home/mbpons/switches/dell_emc/vars/dellos10.yaml
+
+  tasks:
+  - name: Get Dell EMC OS10 Show Routes
+    dellos10_command:
+      commands: 
+        - show ip route
+    register: command_output 
+ 
+  - name: Display the config
+    debug:
+      msg: "{{command_output.stdout_lines}}"

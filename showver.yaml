@@ -1,0 +1,18 @@
+---
+- name: Dell Core 01/02 SW
+  hosts: all
+  connection: network_cli
+  gather_facts: false
+
+  vars_files:
+    - ~/switches/dell_emc/vars/dellos10.yaml
+
+  tasks:
+  - name: Get Dell EMC OS10 Show version
+    dellos10_facts:
+      gather_subset: all
+    register: show_ver
+
+  - name: Display the config
+    debug:
+      msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
