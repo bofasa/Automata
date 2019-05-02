@@ -5,7 +5,7 @@
   gather_facts: false
 
   vars_files:
-    - ~/switches/dell_emc/vars/dellos10.yaml
+    - vars/dellos10.yaml
 
   tasks:
   - name: Get Dell EMC OS10 Show version
