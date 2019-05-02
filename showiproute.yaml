@@ -7,11 +7,15 @@
   vars_files:
     - /home/mbpons/switches/dell_emc/vars/dellos10.yaml
 
+  vars_prompt:
+  - name: rute_to_look
+    prompt: "Ingrese ruta:"
+
   tasks:
   - name: Get Dell EMC OS10 Show Routes
     dellos10_command:
       commands: 
-        - show ip route
+        - show ip route | include {{ rute_to_look }}
     register: command_output 
  
   - name: Display the config
