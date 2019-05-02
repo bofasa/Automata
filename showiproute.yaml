@@ -25,6 +25,6 @@
       - Route not in route_found.stdout[0]
 
   - name: Route {{ Route }}/24 in Router Cores was found
-    debug: msg="{{ route_found.stdout}}"
+    debug: msg="{{ route_found.stdout }}"
     when : 
       - Route in route_found.stdout[0]
