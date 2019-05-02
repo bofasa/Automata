@@ -1,15 +1,15 @@
 ---
 - name: 'Dell Core 01/02 SW'
-  hosts: all
   connection: network_cli
-  gather_facts: no
-
-  vars_files:
-    - /home/mbpons/switches/dell_emc/vars/dellos10.yaml
+  gather_facts: false
+  hosts: all
 
   vars_prompt:
   - name: rute_to_look
     prompt: "Ingrese ruta:"
+
+  vars_files:
+    - vars/dellos10.yaml
 
   tasks:
   - name: Get Dell EMC OS10 Show Routes
