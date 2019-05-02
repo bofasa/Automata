@@ -1,4 +1,5 @@
 ---
+
 - name: Dell Core 01/02 SW
   hosts: all
   connection: network_cli
